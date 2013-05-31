@@ -1,0 +1,20 @@
+.intranet-dashboard.layout-narrowsidebars #left{width:18%}
+.intranet-dashboard.layout-narrowsidebars #content{width:54%}
+.intranet-dashboard.layout-narrowsidebars #right{width:28%}
+#booksubmenu .menu li.collapsed,#booksubmenu .menu li.leaf{list-style:none;border:none;margin:0}
+#booksubmenu .menu li.collapsed a{background: url("/profiles/openatrium/themes/ginkgo/images/sprite_base.png") no-repeat scroll 0 -60px transparent;padding-left:30px}
+#booksubmenu .menu li.leaf a{background: url("/profiles/openatrium/themes/ginkgo/images/sprite_base.png") no-repeat scroll 0 -110px #fff;padding-left:30px}
+
+.column-main{width:72%}
+.column-side{width:26.99%}
+
+/*webfm*/
+#webfm-dirlist th.head{white-space:nowrap}
+#webfm-dirlist td.txt{min-width:100px}
+#webfm-tree .dirtree{overflow:hidden;margin:0 0 10px;padding:3px 7px 1px;border: solid #D0D0D0 1px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;box-shadow:0 0 6px #eee;-moz-box-shadow:0 0 6px #eee;-webkit-box-shadow:0 0 6px #eee;}
+#node-form #dirtree3{display:none;}
+
+.view-Group-Documents .edit-button{float:right;}
+.view-Group-Documents .edit-button a{line-height:85%;padding:0 5px;margin:4px 15px 0;display:block; border-left:1px solid #ddd;border-right:1px solid #ddd;}
+
+.o2k7Skin .mceToolbar .mceToolbarStart span{float: left;}

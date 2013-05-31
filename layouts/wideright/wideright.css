@@ -1,0 +1,32 @@
+/* $Id: twocol.css,v 1.1.2.1 2008/12/16 21:27:58 merlinofchaos Exp $ */
+
+.panel-wideright { 
+/*  overflow: hidden;  */
+}
+
+.panel-col-right{
+	float:left;width:100%}
+	
+.panel-wideright .panel-col-right .panel-col-right-inside .inside{
+float:left;
+padding: 0 20px 20px 0;
+margin: 0 10px 0 0;
+width: 98%}
+* html .panel-wideright .panel-col-right {}
+
+.panel-wideright .panel-col-right-inside {
+margin-left:275px;}
+
+.panel-wideright .panel-col-left {
+float:left;
+margin-left:-100%;}
+* html .panel-wideright .panel-col-left {}
+
+.panel-wideright .panel-col-left .inside { 
+width:275px;
+float:left;}
+
+#panels-edit-display .panel-pane,
+#panels-edit-display .helperclass {}
+
+.panel-wideright .panel-separator {}

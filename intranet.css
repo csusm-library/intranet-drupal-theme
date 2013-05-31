@@ -1,0 +1,104 @@
+#user-login{max-width:500px}
+.atrium-welcome embed {display:none;margin:0 auto 10px}
+.not-logged-in #navigation{display:none}
+body.layout-leftsidebar #left{float:left;width:21.5%}
+body.layout-leftsidebar #content{float:left;width:69%}
+body.layout-leftsidebar #page .limiter{background:url("images/vrule.png") repeat-y scroll 21.5% 0 transparent}
+#content .page-content .node{min-height:350px}
+#content .page-content .node.node-blog{min-height:75px}
+#content .page-content #agenda-panel .node{min-height:10px}
+#agenda-panel .field.terms{display:none}
+#agenda-panel li.comment_add a{color:#4488AA!important;font-weight:normal}
+#agenda-panel .panel-singlecol-top .node{border:none!important;text-align:right}
+#spaces-dashboard-admin-form .node{min-height:10px!important}
+.agenda-options a.add-topic-link{background:url("images/sprite_bleeds.png") repeat-x scroll 0 -400px #666666;border-color:#555555 #555555 #333333;border-radius:5px 5px 5px 5px;border-style:solid;border-width:1px;color:#fff;font-size:11px;font-weight:bold;margin-left:5px;padding:4px 9px;text-shadow:0 1px 0 #444}
+#page .limiter{max-width:1380px}
+body.layout-narrowsidebars #left,body.layout-narrowsidebars #right{float:left;width:22%}
+body.layout-narrowsidebars .limiter{background-image:none!important}
+body.layout-narrowsidebars #content{float:left;width:56%}
+.page-region .block {box-shadow:0 0 7px #ddd;-moz-box-shadow:0 0 7px #ddd;-webkit-box-shadow:0 0 7px #ddd}
+.page-region .block-content{background:#fafafa}
+.block .menu ul {border-left:24px solid #F6F6F6}
+#global a.logo{width:105px}
+#atrium-search-form{min-width:325px}
+.page-content .node-links{padding:20px 0}
+.node-links ul.links li a{font-size:14px;color:#287785;padding:6px;margin:0 0 0 8px}
+.node-links ul.links li a.flag {text-align:center;width:4.64em}
+.node-links ul.links li a.flag, .node-links ul.links li a.action-button{background:#9FC748;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;color:#fff;display:inline-block;font-size:1.077em;padding:0.6em 1em .4em;margin:-5px 0 0}
+.node-links ul.links li a.unflag-action {background:none repeat scroll 0 0 #EEEEEE;color:#0678BE}
+.node-links ul.links li a.flag:hover,.node-links ul.links li a.flag:focus,.node-links ul.links li a.action-button:focus,.node-links ul.links li a.action-button:hover{background:#8AAF3C;color:#fff;text-decoration:none}
+.node-links ul.links:hover{background:none}
+.prose .webfm-attach-list img{display:inline-block}
+#block-search-0 .block-title,
+#search-block-form label{display:none}
+#block-search-0{text-align:right;background:transparent;position:relative;z-index:1000;margin-top:-54px;margin-left:50px;border:none;box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;max-width:500px}
+#block-search-0 .block-content{background:transparent;border:none!important;padding:0}
+#block-search-0 .container-inline{margin:0 0 16px;background:transparent}
+#edit-search-block-form-1{width:100%;max-width:300px;padding:4px 2px;border:1px solid #ddd}
+
+#views-exposed-form-og-search-default .views-exposed-widget{float:none;padding:0;border-bottom:none;margin-right:90px}
+#views-exposed-form-og-search-default .views-submit-button{position:absolute;right:11px;padding:0;margin:-25px 0 0}
+#views-exposed-form-og-search-default #edit-keys{width:auto}
+
+div.litecal-compact .litecal-title ul.links{display:block}
+
+.drupal-tabs{background:url("images/sprite_bleeds.png") repeat-x scroll 0 -360px #EEEEEE;border-bottom:1px solid #CCCCCC;height:27px;position:relative;z-index:1;padding-top:8px}
+.drupal-tabs ul.ui-tabs-nav{float:none;height:35px;position:static;margin:0 10px}
+.drupal-tabs ul.ui-tabs-nav li{float:left}
+.drupal-tabs li a, .drupal-tabs li a:hover,.drupal-tabs li.active a, .drupal-tabs li a.active {background:none repeat scroll 0 0 transparent;border-radius:5px 5px 5px 5px;color:#888888;font-size:13px;font-weight:bold;margin-right:1px;padding:5px 10px;text-shadow:0 1px 0 #FFFFFF}
+.drupal-tabs li a:hover{-moz-border-bottom-colors:none;-moz-border-image:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background:none repeat scroll 0 0 #DDDDDD;border-color:#CCCCCC #DDDDDD #FFFFFF;border-style:solid;border-width:1px;color:#333333;padding:4px 9px}
+.drupal-tabs li a:active {background:none repeat scroll 0 0 #CCCCCC;border-color:#BBBBBB #CCCCCC #EEEEEE}
+.drupal-tabs li.active a,.drupal-tabs li a.active{background:none repeat scroll 0 0 #FFFFFF;border-color:#CCCCCC #DDDDDD;border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;border-style:solid;border-width:1px 1px 0;color:#333333;padding:4px 9px 10px}
+
+.column-main{width:72%}
+.column-side{width:26.99%}
+
+/* content formatting*/
+.prose ul li{list-style:square}
+.prose ul ul{margin-left:30px}
+
+/*notebook page*/
+#booksubmenu .menu{padding:0;margin:10px 30px;width:300px}
+#booksubmenu .menu li.leaf{border:none;background-image:none;list-style:none}
+#booksubmenu .menu a{display:block;line-height:15px;border:0;padding:4px 10px 5px 0;margin:0}
+
+/*agenda page*/
+.node.meeting{position:relative}
+.node-type-meeting .agenda-options{position:absolute;right:6px;top:15px;z-index:10}
+#tabs-agenda-panel-middle.drupal-tabs ul.ui-tabs-nav{height:22px}
+.node-type-meeting .drupal-tabs li.active a,.node-type-meeting .drupal-tabs li a.active{padding:4px 9px 6px}
+
+/*comments */
+.comment-submitted{margin-top:3px}
+
+/* admin sidebar */
+div#admin-toolbar div.admin-tab, div#admin-toolbar div.admin-tab a{color:#FC0!important}
+div.krumo-expand,div.krumo-element{background:#333!important;color:#ddd!important}
+a.krumo-name{color:#FC0!important}
+li.krumo-child{margin-left:6px!important}
+
+/* admin area */
+#user-admin-perm .collapsed legend .fieldset-title a{color:#4488AA}
+#user-admin-perm .collapsible legend .fieldset-title a{height:auto;padding:2px 6px;color:#4488AA}
+#views-bulk-operations-form--1 #edit-groups{height:250px}
+
+/* 404 */
+body.not-found .page-content{background:url("images/404.png") no-repeat 50% 50%;height:350px}
+
+/*bookmarklet*/
+#bkmarklet-wrapper{display:none}
+.intranet-dashboard #bkmarklet-wrapper{position:absolute;right:290px;width:180px;top:10px;display:block}
+#issue-report{position:absolute;right:125px;margin-left:500px;width:180px;top:10px;visibility:visible}
+#issue-report a,#bkmarklet-wrapper a{background:url("images/sprite_bleeds.png") repeat-x scroll 0 -400px #666666;border-color:#555555 #555555 #333333;border-radius:5px 5px 5px 5px;border-style:solid;border-width:1px;color:#fff;font-size:11px;font-weight:bold;margin-left:5px;padding:4px 9px;text-shadow:0 1px 0 #444}
+#issue-report a{color:#fff}
+#bkmarklet-wrapper span{border-color:transparent transparent #f8f8f8 transparent;border-style:solid;border-width:8px;font-size:0;height:0;top:-15px;line-height:0;position:absolute;left:23px;z-index:1}
+#bkmarklet-wrapper .bkmark-inst{line-height:normal;color:#777;background:#f8f8f8;padding:4px;position:absolute;top:33px;margin-left:10px;border-radius:5px;box-shadow:0 2px 2px #666}
+
+/*date pop-up fix*/
+#ui-datepicker-div{background:#efefef;padding:5px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px}
+
+/*webfm*/
+#webfm-dirlist th.head{white-space:nowrap}
+#webfm-dirlist td.txt{min-width:100px}
+#webfm-tree .dirtree{overflow:hidden;margin:0 0 10px;padding:3px 7px 1px;border: solid #D0D0D0 1px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;box-shadow:0 0 6px #eee;-moz-box-shadow:0 0 6px #eee;-webkit-box-shadow:0 0 6px #eee;}
+#node-form #dirtree3{display:none;}

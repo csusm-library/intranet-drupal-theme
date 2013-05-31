@@ -1,0 +1,28 @@
+/* $Id: twocol.css,v 1.1.2.1 2008/12/16 21:27:58 merlinofchaos Exp $ */
+
+.panel-wideleft { 
+/*  overflow: hidden;  */
+}
+
+.panel-wideleft-inside{
+	padding-right:300px;}
+	
+.panel-wideleft .panel-col-left .panel-col-left-inside .inside{padding: 0 40px 20px 20px}
+* html .panel-wideleft .panel-col-left {}
+
+.panel-wideleft .panel-col-left-inside {
+float:left;
+width:99%;}
+
+.panel-wideleft .panel-col-right { 
+margin-right:-300px;}
+* html .panel-wideleft .panel-col-right {}
+
+.panel-wideleft .panel-col-right .inside { 
+width:300px;
+float:left;}
+
+#panels-edit-display .panel-pane,
+#panels-edit-display .helperclass {}
+
+.panel-wideleft .panel-separator {}

@@ -1,0 +1,5 @@
+.panel-widemiddle-middle{float:left;width:100%;}
+.panel-widemiddle .widemiddle-panel .inside{margin: 0 12px;}
+.panel-widemiddle .panel-widemiddle-middle .inside{margin:0 250px 0 190px;}
+.panel-widemiddle-left{float:left;width:180px;margin-left:-100%}
+.panel-widemiddle-right{float:left;width:220px;margin-left:-250px}
