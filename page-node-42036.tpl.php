@@ -1,7 +1,7 @@
 <?php
 $filename ="projects-export.xls";
 db_set_active('redmine');
-  $result = db_query("SELECT proj.id,proj.name,proj.status,proj.identifier,proj.created_on,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = proj.id AND cv.custom_field_id = '1') AS ptype,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = proj.id AND cv.custom_field_id = '5') AS pstatus,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = proj.id AND cv.custom_field_id = '2') AS owning,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = proj.id AND iss.status_id IN (1,2,4,7,12)) AS oissues,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = proj.id) AS tissues FROM {projects} proj WHERE proj.status = '1' ORDER BY proj.name");
+  $result = db_query("SELECT proj.id,proj.name,proj.status,proj.identifier,proj.created_on,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = proj.id AND cv.custom_field_id = '1') AS ptype,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = proj.id AND cv.custom_field_id = '5') AS pstatus,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = proj.id AND cv.custom_field_id = '2') AS owning,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = proj.id AND iss.status_id IN (1,2,4,7,12)) AS oissues,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = proj.id) AS tissues FROM {projects} proj WHERE proj.status = '1' ORDER BY proj.type,proj.name");
 
 header('Content-type: application/ms-excel');
 header('Content-Disposition: attachment; filename='.$filename);
@@ -21,7 +21,7 @@ header('Content-Disposition: attachment; filename='.$filename);
 </tr>
 </thead>
 <tbody>
-<?php 
+<?php
 while ($query = db_fetch_object($result)) {
   echo "<tr>\n";
   echo "<td>" . $query->id . "</td>";
