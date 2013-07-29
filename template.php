@@ -30,10 +30,10 @@ function intranet_preprocess_page(&$variables) {
 function intranet_preprocess_node(&$variables) {
   $variables['template_files'][] = 'node-' . $variables['nid'];
   $node = $variables['node'];
-  if (!empty($node) && ($node->nid == "42035" || $node->nid == "42085")) {
+  if (!empty($node) && ($node->nid == "42035" || $node->nid == "42085" || $node->nid == "43191")) {
     drupal_add_css("sites/all/libraries/dataTables/media/css/jquery.dataTables.css");
-    drupal_add_js("sites/all/libraries/dataTables/media/js/jquery.dataTables.js");
-    drupal_add_js('$(document).ready(function(){$("#projects-table").dataTable({"bJQueryUI": false,"sPaginationType": "full_numbers","iDisplayLength": 50});});', 'inline');
+    drupal_add_js("https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js");
+    drupal_add_js('$(document).ready(function(){$(".projects-table").dataTable({"bJQueryUI": false,"sPaginationType": "full_numbers","iDisplayLength": 50});});', 'inline');
     $variables['styles'] = drupal_get_css();
     $variables['script'] = drupal_get_js();
   }
@@ -59,3 +59,40 @@ function intranet_preprocess_node_form(&$variables) {
   $variables['form']['nodeformcols_region_main']['webfm-attach']['attach']['browser']['wrapper']['#collapsed'] = FALSE;
 }
 
+function intranet_redmine_project_lists($statuses){
+  db_set_active('redmine');
+  $myquery = "SELECT p.id,p.name,p.status,p.identifier,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '5') AS pstatus,(SELECT GROUP_CONCAT(cv.value SEPARATOR '<br/>') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '1') AS ptype,(SELECT GROUP_CONCAT(cv.value SEPARATOR '<br/>') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '17') AS pcat,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = p.id AND iss.status_id IN (1,2,4,7,12)) AS oissues,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = p.id) AS tissues FROM {projects} p ORDER BY p.name";
+    $result = db_query($myquery);
+  ?>
+  <table class="projects-table display dataTable">
+  <thead>
+  <tr class="header-row">
+  <th class="p-name">Name</th>
+  <th class="p-type">Type</th>
+  <th class="p-category">Categories</th>
+  <th class="p-status">Status</th>
+  <th class="p-tissues">Open Issues</th>
+  <th class="p-tissues">Total Issues</th>
+  </tr>
+  </thead>
+  <tbody>
+  <?php
+  while ($query = db_fetch_object($result)) {
+    if(in_array($query->pstatus, $statuses)){
+      echo "<tr>\n";
+      echo "<td><a href=\"/base/projects/" . $query->identifier . "\">" . $query->name . "</a></td>";
+      echo "<td>" . $query->ptype . "</td>";
+      echo "<td>" . $query->pcat . "</td>";
+      echo "<td>" . $query->pstatus . "</td>";
+      echo "<td><a href=\"/base/projects/" . $query->identifier . "/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=o\">" . $query->oissues . "</a></td>";
+      echo "<td><a href=\"/base/projects/" . $query->identifier . "/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=*\">" . $query->tissues . "</a></td>";
+      echo "</tr>\n";
+    }
+  }
+  ?>
+  </tbody>
+  </table>
+
+  <?php
+  db_set_active('default');
+}
