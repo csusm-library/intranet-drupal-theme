@@ -21,7 +21,21 @@
     <div class='<?php print $hook ?>-content clear-block <?php if (!empty($is_prose)) print 'prose' ?>'>
 <?php
 $statuses = array('Information Gathering','Design','Development','Testing','Implementation','Wrap-up','Ongoing','Postponed');
-intranet_redmine_project_lists($statuses);
+echo "<div style=\"float:left;width:46%;margin-right:20px;\">";
+intranet_redmine_project_lists($statuses,array('All Library'));
+intranet_redmine_project_lists($statuses,array('Access Services'));
+intranet_redmine_project_lists($statuses,array('Acquisitions'));
+intranet_redmine_project_lists($statuses,array("Dean's Office"));
+intranet_redmine_project_lists($statuses,array('ILP'));
+intranet_redmine_project_lists($statuses,array('Media Library'));
+intranet_redmine_project_lists($statuses,array('Metadata'));
+intranet_redmine_project_lists($statuses,array('Outreach'));
+echo "</div>";
+echo "<div style=\"float:left;width:46%;\">";
+intranet_redmine_project_lists($statuses,array('Resource Sharing'));
+intranet_redmine_project_lists($statuses,array('RHD'));
+intranet_redmine_project_lists($statuses,array('Systems'));
+echo "</div>";
 
 if (!empty($content)): ?>
       <?php print $content ?>

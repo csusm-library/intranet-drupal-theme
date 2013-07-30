@@ -21,7 +21,7 @@
     <div class='<?php print $hook ?>-content clear-block <?php if (!empty($is_prose)) print 'prose' ?>'>
 <?php
 $statuses = array('Complete','Cancelled');
-intranet_redmine_project_lists($statuses);
+intranet_redmine_project_table($statuses);
 
 if (!empty($content)): ?>
       <?php print $content ?>
