@@ -30,7 +30,7 @@ function intranet_preprocess_page(&$variables) {
 function intranet_preprocess_node(&$variables) {
   $variables['template_files'][] = 'node-' . $variables['nid'];
   $node = $variables['node'];
-  if (!empty($node) && ($node->nid == "42035" || $node->nid == "42085" || $node->nid == "43191")) {
+  if (!empty($node) && ($node->nid == "42035" || $node->nid == "42085" || $node->nid == "43123")) {
     drupal_add_css("sites/all/libraries/dataTables/media/css/jquery.dataTables.css");
     drupal_add_js("https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js");
     drupal_add_js('$(document).ready(function(){$(".projects-table").dataTable({"bJQueryUI": false,"sPaginationType": "full_numbers","iDisplayLength": 50});});', 'inline');
@@ -59,7 +59,7 @@ function intranet_preprocess_node_form(&$variables) {
   $variables['form']['nodeformcols_region_main']['webfm-attach']['attach']['browser']['wrapper']['#collapsed'] = FALSE;
 }
 
-function intranet_redmine_project_lists($statuses){
+function intranet_redmine_project_table($statuses){
   db_set_active('redmine');
   $myquery = "SELECT p.id,p.name,p.status,p.identifier,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '5') AS pstatus,(SELECT GROUP_CONCAT(cv.value SEPARATOR '<br/>') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '1') AS ptype,(SELECT GROUP_CONCAT(cv.value SEPARATOR '<br/>') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '17') AS pcat,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = p.id AND iss.status_id IN (1,2,4,7,12)) AS oissues,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = p.id) AS tissues FROM {projects} p ORDER BY p.name";
     $result = db_query($myquery);
@@ -78,7 +78,7 @@ function intranet_redmine_project_lists($statuses){
   <tbody>
   <?php
   while ($query = db_fetch_object($result)) {
-    if(in_array($query->pstatus, $statuses)){
+    if(in_array($query->pstatus, $statuses) || in_array('all', $statuses)){
       echo "<tr>\n";
       echo "<td><a href=\"/base/projects/" . $query->identifier . "\">" . $query->name . "</a></td>";
       echo "<td>" . $query->ptype . "</td>";
@@ -92,6 +92,31 @@ function intranet_redmine_project_lists($statuses){
   ?>
   </tbody>
   </table>
+
+  <?php
+  db_set_active('default');
+}
+
+function intranet_redmine_project_lists($statuses, $groups){
+  db_set_active('redmine');
+  $myquery = "SELECT p.id,p.name,p.status,p.identifier,p.is_public,(SELECT cv.value FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '5') AS pstatus,(SELECT GROUP_CONCAT(cv.value SEPARATOR '<br/>') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '1') AS ptype,(SELECT GROUP_CONCAT(cv.value SEPARATOR '<br/>') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '17') AS pcat,(SELECT GROUP_CONCAT(cv.value SEPARATOR ',') FROM {custom_values} cv WHERE cv.customized_id = p.id AND cv.custom_field_id = '2') AS pgroups,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = p.id AND iss.status_id IN (1,2,4,7,12)) AS oissues,(SELECT COUNT(iss.id) FROM {issues} iss WHERE iss.project_id = p.id) AS tissues FROM {projects} p WHERE p.status = 1 AND p.is_public = 1 ORDER BY p.name";
+    $result = db_query($myquery);
+  echo "<h2>" . $groups[0] . "</h2>"; ?>
+<ul class=\"group-projects-list\">
+  <?php
+  while ($query = db_fetch_object($result)) {
+    if(in_array($query->pstatus, $statuses)){
+      if(in_array($query->pgroups, $groups)){
+        echo "<li><a href=\"/base/projects/" . $query->identifier . "\" target=\"_blank\">" . $query->name . "</a> - ";
+        echo "<span class=\"project-link\">[" . $query->pstatus . "]</span>";
+        echo "<span class=\"project-link\">issues: <a href=\"/base/projects/" . $query->identifier . "/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=o\" target=\"_blank\">" . $query->oissues . "</a> open of ";
+        echo "<a href=\"/base/projects/" . $query->identifier . "/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=*\" target=\"_blank\">" . $query->tissues . " total</a></span>";
+        echo "</li>\n";
+      }
+    }
+  }
+  ?>
+  </ul>
 
   <?php
   db_set_active('default');
