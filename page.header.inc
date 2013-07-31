@@ -3,7 +3,6 @@
   <head>
     <?php print $head ?>
     <?php print $styles ?>
-				<link type="text/css" rel="stylesheet" media="screen" href="/sites/lib.csusm.edu/themes/intranet/test.css">
     <?php print $scripts ?>
     <?php print $ie ?>
     <title><?php print $head_title ?></title>

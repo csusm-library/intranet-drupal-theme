@@ -102,3 +102,12 @@ body.not-found .page-content{background:url("images/404.png") no-repeat 50% 50%;
 #webfm-dirlist td.txt{min-width:100px}
 #webfm-tree .dirtree{overflow:hidden;margin:0 0 10px;padding:3px 7px 1px;border: solid #D0D0D0 1px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;box-shadow:0 0 6px #eee;-moz-box-shadow:0 0 6px #eee;-webkit-box-shadow:0 0 6px #eee;}
 #node-form #dirtree3{display:none;}
+
+/* projects list */
+.group-projects-list li{
+  clear: both;
+}
+.group-projects-list .project-link{
+  float: left;
+  padding: 0 5px;
+}

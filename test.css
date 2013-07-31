@@ -1,20 +1,100 @@
-.intranet-dashboard.layout-narrowsidebars #left{width:18%}
-.intranet-dashboard.layout-narrowsidebars #content{width:54%}
-.intranet-dashboard.layout-narrowsidebars #right{width:28%}
-#booksubmenu .menu li.collapsed,#booksubmenu .menu li.leaf{list-style:none;border:none;margin:0}
-#booksubmenu .menu li.collapsed a{background: url("/profiles/openatrium/themes/ginkgo/images/sprite_base.png") no-repeat scroll 0 -60px transparent;padding-left:30px}
-#booksubmenu .menu li.leaf a{background: url("/profiles/openatrium/themes/ginkgo/images/sprite_base.png") no-repeat scroll 0 -110px #fff;padding-left:30px}
+.intranet-dashboard.layout-narrowsidebars #left{
+  width:18%}
+.intranet-dashboard.layout-narrowsidebars #content{
+  width:54%}
+.intranet-dashboard.layout-narrowsidebars #right{
+  width:28%}
+#booksubmenu .menu li.collapsed,#booksubmenu .menu li.leaf{
+  list-style:none;border:none;margin:0}
+#booksubmenu .menu li.collapsed a{
+  background: url("/profiles/openatrium/themes/ginkgo/images/sprite_base.png") no-repeat scroll 0 -60px transparent;
+  padding-left:30px}
+#booksubmenu .menu li.leaf a{
+  background: url("/profiles/openatrium/themes/ginkgo/images/sprite_base.png") no-repeat scroll 0 -110px #fff;
+  padding-left:30px}
 
 .column-main{width:72%}
 .column-side{width:26.99%}
 
 /*webfm*/
-#webfm-dirlist th.head{white-space:nowrap}
-#webfm-dirlist td.txt{min-width:100px}
-#webfm-tree .dirtree{overflow:hidden;margin:0 0 10px;padding:3px 7px 1px;border: solid #D0D0D0 1px;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;box-shadow:0 0 6px #eee;-moz-box-shadow:0 0 6px #eee;-webkit-box-shadow:0 0 6px #eee;}
+#webfm-dirlist th.head{
+  white-space:nowrap}
+#webfm-dirlist td.txt{
+  min-width:100px}
+#webfm-tree .dirtree{
+  overflow:hidden;
+  margin:0 0 10px;
+  padding:3px 7px 1px;
+  border: solid #D0D0D0 1px;
+  border-radius:5px 5px 5px 5px;
+  -moz-border-radius:5px 5px 5px 5px;
+  -webkit-border-radius:5px 5px 5px 5px;
+  box-shadow:0 0 6px #eee;
+  -moz-box-shadow:0 0 6px #eee;
+  -webkit-box-shadow:0 0 6px #eee;}
 #node-form #dirtree3{display:none;}
 
-.view-Group-Documents .edit-button{float:right;}
-.view-Group-Documents .edit-button a{line-height:85%;padding:0 5px;margin:4px 15px 0;display:block; border-left:1px solid #ddd;border-right:1px solid #ddd;}
+.view-Group-Documents .edit-button{
+  float:right;}
+.view-Group-Documents .edit-button a{
+  line-height:85%;
+  padding:0 5px;
+  margin:4px 15px 0;
+  display:block;
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;}
 
-.o2k7Skin .mceToolbar .mceToolbarStart span{float: left;}
+.o2k7Skin .mceToolbar .mceToolbarStart span{
+  float: left;}
+
+/* projects list */
+#node-43191 .node-content .btn{
+  float: right;
+  padding: 4px 8px;
+  margin:5px 10px;
+}
+.add-new-project{
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 0 0 100px;
+}
+#project-lists-wrapper{
+  clear: both;
+}
+.prose .group-projects-title{
+  width: 90%;
+  padding-bottom: 3px;
+  color: #555;
+  margin-bottom: 2px;
+}
+#project-page-links{
+  float:right;
+  margin-top: -55px;
+}
+.group-projects-list{
+  border:none;
+  margin: 0 0 20px 0!important;
+  width:90%;
+}
+.group-projects-list td{
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 2px 0;
+}
+.group-projects-list .actions{
+  width:30%;
+  text-align: right;
+}
+.group-projects-list .actions .open-issues{
+  margin: 0 0 0 30px;
+}
+.group-projects-list .icon{
+  font-size: 14px;
+}
+.icon-dashboard:before,
+.icon-calendar:before {
+  content: none !important;
+}
+#features-menu a{
+  font-family: Arial,Helvetica,sans-serif !important;
+}
