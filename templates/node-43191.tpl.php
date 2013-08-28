@@ -17,7 +17,7 @@
         endif;
         echo "<div id=\"project-lists-wrapper\">";
           $statuses = array('Information Gathering','Design','Development','Testing','Implementation','Wrap-up','Ongoing','Postponed');
-          echo "<div style=\"float:left;width:42%;max-width:500px;margin-right:40px;\">";
+          echo "<div style=\"float:left;width:46%;max-width:500px;margin-right:40px;\">";
           intranet_redmine_project_lists($statuses,'All Library');
           intranet_redmine_project_lists($statuses,'Access Services');
           intranet_redmine_project_lists($statuses,'Acquisitions');
@@ -25,7 +25,7 @@
           intranet_redmine_project_lists($statuses,'ILP');
           intranet_redmine_project_lists($statuses,'Institutional Repository');
           echo "</div>";
-          echo "<div style=\"float:left;width:42%;max-width:500px;\">";
+          echo "<div style=\"float:left;width:46%;max-width:500px;\">";
           intranet_redmine_project_lists($statuses,'Media Library');
           intranet_redmine_project_lists($statuses,'Metadata');
           intranet_redmine_project_lists($statuses,'Outreach');

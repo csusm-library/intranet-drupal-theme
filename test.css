@@ -48,6 +48,15 @@
   float: left;}
 
 /* projects list */
+.og-context-41849 #page .limiter{
+  background-position: 72% 0;
+}
+.og-context-41849 #content{
+  width:72%;
+}
+.og-context-41849 #right{
+  width: 25.99%;
+}
 #node-43191 .node-content .btn{
   float: right;
   padding: 4px 8px;
@@ -74,7 +83,7 @@
 .group-projects-list{
   border:none;
   margin: 0 0 20px 0!important;
-  width:90%;
+  width:99%;
 }
 .group-projects-list td{
   border: none;
