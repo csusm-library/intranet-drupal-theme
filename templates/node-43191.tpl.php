@@ -21,6 +21,7 @@
           intranet_redmine_project_lists($statuses,'All Library');
           intranet_redmine_project_lists($statuses,'Access Services');
           intranet_redmine_project_lists($statuses,'Acquisitions');
+          intranet_redmine_project_lists($statuses,'Archives');
           intranet_redmine_project_lists($statuses,"Dean's Office");
           intranet_redmine_project_lists($statuses,'ILP');
           intranet_redmine_project_lists($statuses,'Institutional Repository');

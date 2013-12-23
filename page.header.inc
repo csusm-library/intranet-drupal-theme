@@ -18,7 +18,7 @@
       </div>
     <?php endif; ?>
     <?php print $breadcrumb ?>
-    <div id="issue-report"><a href="/base/projects/project0115/issues/new" target="_blank">Report Issue</a></div>
+    <div id="issue-report"><a href="/node/43191" target="_blank">Report Issue</a></div>
     <div id="bkmarklet-wrapper"><a href="javascript:u=document.location.href;t=document.title;s=window.getSelection();%20void(window.open(%22https://lib.csusm.edu/library_all/node/add/bookmark?edit[title]=%22+escape(t)+%20'&edit[field_description][0][value]='+escape(s)+'&edit[field_url_redirect][0][value]='+escape(u),'_blank',%20'width=724,height=500,status=yes,resizable=yes,scrollbars=yes'));">Bookmarkit</a><div class="bkmark-inst"><span class="arrow"></span>drag to your bookmarks bar to share webpages!</div></div>
     <?php print $logo ?>
   </div></div>
